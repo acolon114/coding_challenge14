@@ -33,3 +33,14 @@ tickets.forEach(ticket => {
 } catch (error) {
 errorMessage.textContent = error.message;
 }
+
+//Task 4: Use finally to Ensure Cleanup
+    finally {
+        if (ticketContainer.contains(loadingMessage)) {
+            ticketContainer.removeChild(loadingMessage);
+        }
+    }
+}
+
+// Run the function when the page loads
+document.addEventListener("DOMContentLoaded", fetchTickets);
